@@ -13,7 +13,7 @@ describe("day1", () => {
 
         console.log({taskA, taskB});
 
-        expect(taskA).toBe("1195");
-        expect(taskB).toBe("1235");
+        expect(taskA).toBe("68775");
+        expect(taskB).toBe("202585");
     });
 });
