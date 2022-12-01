@@ -1,0 +1,4 @@
+{
+    "jasmineExplorer.config": "src/jasmine.json",
+    "jasmineExplorer.nodeArgv": ["-r", "ts-node/register"]
+}
