@@ -16,12 +16,17 @@ export const day1: AocFunc = (input: string[]): string[] => {
         return groups;
     };
 
-    const taskA = group(input)
-        .map((v) => v.length > 0 ? v.reduce((p,c) => p + c) : 0, 0)
-        .sort((a,b) => b - a)[0]
-        .toString();
+    const getTopCalories = (n: number) => {
+        return group(input)
+            .map((v) => v.length > 0 ? v.reduce((p,c) => p + c) : 0, 0)
+            .sort((a,b) => b - a).slice(0, n)
+            .reduce((p,c) => p + c, 0)
+            .toString();
+    }
 
-    const taskB = "";
+    const taskA = getTopCalories(1);
+
+    const taskB = getTopCalories(3);
 
     return [taskA, taskB]
 };
