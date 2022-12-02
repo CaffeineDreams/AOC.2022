@@ -1,9 +1,10 @@
 import { GetInputFromFile } from "./helpers/AocHelpers";
-import * as d from "./days";
 
-(() => {
+
+(async () => {
     const days = [
-        d.day1
+        (await import("./days/day1")).day1,
+        (await import("./days/day2")).day2
     ];
 
     for (const day of days) {
@@ -13,7 +14,7 @@ import * as d from "./days";
 
         console.log(`
         ${name} solution:
-            Task A: ${taskA}
+            Task A: ${taskA || "NOPE!"}
             Task B: ${taskB || "NOPE!"}
         ------------
         `);

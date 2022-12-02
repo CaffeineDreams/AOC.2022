@@ -1,8 +1,8 @@
-import { day1 } from "../days";
 import { GetInputFromFile } from "../helpers/AocHelpers";
 
-describe("day1", () => {
+describe("AOC Days", async () => {
     let input: string[];
+    const day1 = (await import("../days/day1")).day1;
 
     beforeEach(() => {
         input = GetInputFromFile(`inputs\\day1.txt`);

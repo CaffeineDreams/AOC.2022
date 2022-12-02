@@ -18,7 +18,7 @@ export const day1: AocFunc = (input: string[]): string[] => {
 
     const getTopCalories = (n: number) => {
         return group(input)
-            .map((v) => v.length > 0 ? v.reduce((p,c) => p + c) : 0, 0)
+            .map((v) => v.length ? v.reduce((p,c) => p + c) : 0, 0)
             .sort((a,b) => b - a).slice(0, n)
             .reduce((p,c) => p + c, 0)
             .toString();
