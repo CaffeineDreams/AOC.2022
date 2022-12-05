@@ -1,4 +1,3 @@
-import { stringify } from "querystring";
 import { AocFunc } from "../helpers/AocHelpers";
 
 export  const day2: AocFunc = (input: string[]): string[] => {
@@ -76,29 +75,29 @@ export  const day2: AocFunc = (input: string[]): string[] => {
         }
     }
 
-    const calculateDesiredOutcome = (theres, strategy): "X" | "Y" | "Z" => {
+    const calculateDesiredOutcome = (theirs, strategy): "X" | "Y" | "Z" => {
         switch (strategy) {
             case "X": // take the L
-                return lose(theres);
+                return lose(theirs);
             case "Y": // draw
-                return draw(theres);
+                return draw(theirs);
             case "Z": // win
-                return win(theres);
+                return win(theirs);
         }
     }
 
     const taskA = input
         .filter((v) => !!v)
         .map((i) => i.split(" "))
-        .map(([theres, ours]) => score(scores[ours] + scores[theres], ours))
+        .map(([theirs, ours]) => score(scores[ours] + scores[theirs], ours))
         .reduce((p,c) => p + c, 0)
         .toString();
 
     const taskB = input
         .filter((v) => !!v)
         .map((i) => i.split(" "))
-        .map(([theres, strategy]) => [theres, calculateDesiredOutcome(theres, strategy)])
-        .map(([theres, ours]) => score(scores[ours] + scores[theres], ours))
+        .map(([theirs, strategy]) => [theirs, calculateDesiredOutcome(theirs, strategy)])
+        .map(([theirs, ours]) => score(scores[ours] + scores[theirs], ours))
         .reduce((p,c) => p + c, 0)
         .toString();
 
