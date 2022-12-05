@@ -15,13 +15,24 @@ export  const day3: AocFunc = (input: string[]): string[] => {
         })
         .reduce((p,c) => p + c, 0)
         .toString();
+        
+    const taskB = input
+        .reduce((result, current, i) => {
+            const chunk = Math.floor(i/3); 
+            result[chunk] = [].concat((result[chunk]||[]), current); 
+            return result;
+        }, [])
+        .map(([a,b,c]: string[]) => {
+            const repeatedCharacters = [...a].filter((v) => b.indexOf(v) >= 0);
 
-    // const taskB = input
-    //     .reduce((prevValue, value, i) => {
-    //         if (i % 3 === 0 && i !== 0){
-    //             prevValue
-    //         }
-    //     })
+            for (let r of repeatedCharacters) {
+                if (c.indexOf(r) >= 0)
+                return alphabets.findIndex((i) => i === r) + 1;
+            }
+            return 0;
+        })
+        .reduce((p,c) => p + c, 0)
+        .toString();
 
-    return [taskA,""];
+    return [taskA,taskB];
 };
