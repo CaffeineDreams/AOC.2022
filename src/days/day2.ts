@@ -1,4 +1,3 @@
-import { stringify } from "querystring";
 import { AocFunc } from "../helpers/AocHelpers";
 
 export  const day2: AocFunc = (input: string[]): string[] => {
