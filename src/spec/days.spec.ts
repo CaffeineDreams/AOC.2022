@@ -10,6 +10,7 @@ describe("AOC Days", async () => {
             (await import("../days/day3")).day3,
             (await import("../days/day4")).day4,
             (await import("../days/day5")).day5,
+            (await import("../days/day6")).day6,
         ];
     });
 
@@ -52,5 +53,12 @@ describe("AOC Days", async () => {
         const [taskA, taskB] = days[4](input);
 
         console.log({taskA, taskB});
-    }); 
+    });
+
+    it ("solves day 6", async () => {
+        const input = GetInputFromFile(`inputs\\day6.txt`);
+        const [taskA, taskB] = days[5](input);
+
+        console.info({taskA, taskB});
+    });
 });
