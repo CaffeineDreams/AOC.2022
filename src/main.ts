@@ -7,6 +7,7 @@ import { GetInputFromFile } from "./helpers/AocHelpers";
         (await import("./days/day2")).day2,
         (await import("./days/day3")).day3,
         (await import("./days/day4")).day4,
+        (await import("./days/day5")).day5,
     ];
 
     for (const day of days) {
